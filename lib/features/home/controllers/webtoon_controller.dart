@@ -4,7 +4,9 @@ import 'package:hive/hive.dart';
 class WebtoonController extends GetxController {
   var webtoonCategories = <Map<String, String>>[].obs;
   var favorites = <String>[].obs;
-  var currentRating = 0.0.obs;
+
+  var defaultRating = 0.0.obs;
+  var currentRating = '0.0'.obs;
 
   final _favoritesBox = Hive.box('favorites');
 
@@ -22,11 +24,13 @@ class WebtoonController extends GetxController {
         'title': 'Romance',
         'image': 'assets/romance.jpg',
         'description': 'Top romantic webtoons with over 50 million views.',
+        'rating': '0',
       },
       {
         'title': 'Fantasy',
         'image': 'assets/fantasy.jpg',
         'description': 'Epic fantasy webtoons with magical adventures.',
+        'rating': '0',
       },
     ]);
   }
@@ -49,6 +53,6 @@ class WebtoonController extends GetxController {
 
   // Update rating
   void updateRating(double rating) {
-    currentRating.value = rating;
+    currentRating.value = rating.toString();
   }
 }

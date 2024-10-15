@@ -17,13 +17,16 @@ class HomeScreen extends StatelessWidget {
           itemCount: controller.webtoonCategories.length,
           itemBuilder: (context, index) {
             var category = controller.webtoonCategories[index];
-            return ListTile(
-              leading: Image.asset(category['image']!),
-              title: Text(category['title']!),
-              onTap: () {
-                // Navigate to Detail Screen
-                Get.to(() => DetailScreen(category: category));
-              },
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: ListTile(
+                leading: Image.asset(category['image']!),
+                title: Text(category['title']!),
+                onTap: () {
+                  // Navigate to Detail Screen
+                  Get.to(() => DetailScreen(category: category));
+                },
+              ),
             );
           },
         ),

@@ -21,7 +21,8 @@ class WebtoonExplorerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Webtoon Explorer',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
+        useMaterial3: true,
       ),
       home: HomeScreen(),
       getPages: [
