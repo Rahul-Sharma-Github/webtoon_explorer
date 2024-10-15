@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:webtoon_explorer/features/favorites/screens/favorites_screen.dart';
 import '../../home/controllers/webtoon_controller.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -61,6 +62,10 @@ class DetailScreen extends StatelessWidget {
                 'Average Rating: ${controller.currentRating.value}',
                 style: const TextStyle(fontSize: 18),
               ),
+            ),
+            ElevatedButton(
+              onPressed: () => Get.to(() => FavoritesScreen()),
+              child: const Text('Go to Favorites'),
             ),
           ],
         ),
